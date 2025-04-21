@@ -4,4 +4,6 @@ COPY . .
 
 RUN npm ci && npm run build
 
-CMD [ "npm", "run", "preview" ]
+RUN npm i -g serve
+
+CMD [ "serve", "-s", "dist" ]
