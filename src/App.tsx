@@ -6,8 +6,10 @@ import './App.css'
 function App() {
   const [title, setTitle] = useState("")
 
+  console.log()
+
   useEffect(() => {
-    fetch("http://localhost:8000").then(res => res.json()).then(txt => setTitle(txt))
+    fetch(import.meta.env.VITE_BACKEND_URL).then(res => res.json()).then(txt => setTitle(txt))
   })
 
   return (
