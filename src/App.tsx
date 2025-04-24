@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [title, setTitle] = useState("")
-
-  console.log()
+  const [title, setTitle] = useState("PLACEHOLDER");
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_BACKEND_URL).then(res => res.json()).then(txt => setTitle(txt))
-  })
+    fetch(import.meta.env.VITE_BACKEND_URL)
+      .then((res) => res.json())
+      .then((txt) => setTitle(txt))
+      .catch((e) => console.error(e));
+  });
 
   return (
     <>
@@ -27,7 +28,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
